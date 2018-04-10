@@ -167,6 +167,7 @@ public class Appt{
      */
 	public void setValid() {
 
+		if (startMonth < 1 || startMonth >= 12)
 			this.valid = false;
 		else if (startHour < 0 || startHour > 23)
 			this.valid = false;
@@ -264,6 +265,7 @@ public class Appt{
     
     /** Gets description */
     public String getDescription() {
+        return title;
     }
     
     /** Gets emailAddress */
@@ -365,6 +367,7 @@ public class Appt{
         {
             printableHour = 12;
         }
+        String represntationApp= printableHour +":"+ getStartHour() + half;
         return represntationApp;
     	
     }
